@@ -1,6 +1,6 @@
 # Python-Tutorial
 ## Introduction
-### Contains all Exercise programs based on the material provided by Google's Python class
+Contains all Exercise programs based on the material provided by Google's Python class
 ## Completed Exercises
 ###
 * String1.py
