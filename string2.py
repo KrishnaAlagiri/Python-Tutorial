@@ -19,7 +19,7 @@ def verbing(s):
     if(s[-3:]!="ing"):
         s+="ing"
     else:
-        s+="ily"
+        s+="ly"
   return (s)
 
 
