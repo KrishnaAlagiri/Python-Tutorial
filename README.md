@@ -2,8 +2,8 @@
 ## Introduction
 Contains all Exercise programs based on the material provided by Google's Python class
 ## Completed Exercises
-###Stings
+### Stings
 * `Week-1` String1.py
 * `Week-2` String2.py
-###List
+### List
 * `Week-2` List1.py
