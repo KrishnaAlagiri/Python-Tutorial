@@ -7,4 +7,4 @@ Contains all Exercise programs based on the material provided by Google's Python
 * `Week-2` String2.py
 ### List
 * `Week-2` List1.py
-* `Week-3` List3.py
+* `Week-3` List2.py
