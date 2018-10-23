@@ -1,5 +1,5 @@
 # Python-Tutorial
-####### `As a part of MLCC` `Study-Jam`
+`As a part of MLCC` `Study-Jam`
 ## Introduction
 Contains all Exercise programs based on the material provided by Google's Python class
 ## Completed Exercises
