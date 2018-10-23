@@ -41,9 +41,42 @@ import sys
 # You could write a helper utility function that reads a file
 # and builds and returns a word/count dict for it.
 # Then print_words() and print_top() can just call the utility function.
+###################3
 
-###
+def CountWords(filename):
+  count = {}
+  file1 = open(filename,'r')
+  for line in file1:
+    words = line.split()
+    for word in words:
+      word = word.lower()
+      if not word in count:
+        count[word] = 1
+      else:
+        count[word] = count[word] + 1
+  file1.close()
+  return(count)
 
+
+def print_words(filename):
+  count = CountWords(filename)
+  # For normal sorting
+  words = sorted(count.keys())
+  for word in words:
+    print(word, count[word])
+
+def KeyFn(Param):
+  return(Param[1])
+
+
+def print_top(filename):
+    count = CountWords(filename)
+    ## Reverse used for displaying top 20.
+    items = sorted(count.items(), key=KeyFn, reverse=True)
+    for item in items[:20]:
+      print(item[0], item[1])
+
+############
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 def main():
