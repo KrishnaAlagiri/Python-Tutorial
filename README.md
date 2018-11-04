@@ -10,3 +10,7 @@ Contains all Exercise programs based on the material provided by Google's Python
 * `Week-2` [List1.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/list1.py)
 ### Dictionaries and Files
 * `Week-3` [Wordcount.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/wordcount.py)
+### Regular Expressions
+* `Week-4` [Babynames.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/babynames.py)
+* `Week-4` [Copyspecial.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/copyspecial.py)
+ 
