@@ -1,5 +1,5 @@
 # Python-Tutorial
-`Study-Jam` - `MLCC` 
+`Study-Jam` - `MLCC`
 ## Introduction
 Contains all Exercise programs based on the material provided by Google's Python class
 ## Completed Exercises
@@ -13,4 +13,5 @@ Contains all Exercise programs based on the material provided by Google's Python
 ### Regular Expressions
 * `Week-4` [Babynames.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/babynames.py)
 * `Week-4` [Copyspecial.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/copyspecial.py)
- 
+### Assignment
+* `Week-5` [parking_lot_system.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/parking_lot_system.py)
