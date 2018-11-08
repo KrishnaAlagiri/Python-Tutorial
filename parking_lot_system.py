@@ -25,21 +25,22 @@ import os
 def free(id):
     if id==1:
         for i in range(0,20):
-            if(parking_slot[i]==0):
+            if(parking_slot[i]==(-1)):
                 parking_slot[i]=1
                 return(i)
     elif id==2:
         for i in range(10,20):
-            if(parking_slot[i]==0):
+            if(parking_slot[i]==(-1)):
                 parking_slot[i]=1
                 return(i)
     elif id==3:
         for i in range(17,20):
-            if(parking_slot[i]==0):
+            if(parking_slot[i]==(-1)):
                 parking_slot[i]=1
                 return(i)
     return(-1)
 
+# vehicle class containing it's respective entities
 class vehicle:
     # instance attributes
     def __init__(self, vt, id):
@@ -58,35 +59,60 @@ class vehicle:
             a=free(3)
             if a!=(-1):
                 self.parking_id = a
+        else:
+            print(" Warning: Vehicle Type not found.")
 
     # printing attributes
     def Print_Ticket(self):
         print("  PARKING TICKET")
         print("====================")
-        print("Vehicle Type: ", self.vehicle_type)
-        print("Vehicle ID: ", self.vehicle_id)
+        print(" Vehicle Type: ", self.vehicle_type)
+        print(" Vehicle ID: ", self.vehicle_id)
         if self.parking_id!=(-1):
-            print("Parking slot alloted: ", self.parking_id)
+            print(" Parking slot alloted: ", self.parking_id)
         else:
-            print("Parking slot unallocated to this vehicle due to lack of availablity")
+            print(" Parking slot unallocated to this vehicle due to lack of availablity")
+
+
+# to print all the free slots
+def print_slots(strings):
+    strings = strings.replace(',',' |')
+    strings = strings.replace('[',' ')
+    strings = strings.replace(']',' ')
+    strings = strings.replace('-1','free')
+    strings = strings.replace('1','present')
+    print("   Parking lot status:")
+    print("============================")
+    print(strings)
+    print()
+    print()
+
 
 # driver codes
 if __name__ == '__main__':
     parking_slot=[]
     # 0 for free-slot and 1 for occupied
     for i in range(0,20):
-        parking_slot.append(0)
+        parking_slot.append(-1)
+
     while(1):
         os.system("cls")
+        print()
+        print_slots(str(parking_slot))
         print("  INPUT MODE")
         print("================")
-        print("Enter the Vehicle Type: ")
+        print(" Enter the Vehicle Type (motorcycle/car/bus): ")
         a = input()
-        print("Enter the Vehicle ID: ")
+        a = a.lower()
+        print(" Enter the Vehicle ID: ")
         b = input()
         c = vehicle(a,b)
+        print()
+        print()
         c.Print_Ticket()
-        print("\rDo you want to continue (Y/N): ")
+        print()
+        print()
+        print("\r Do you want to continue (Y/N): ")
         ch = input()
         if (ch=='n' or ch=='N'):
             break
