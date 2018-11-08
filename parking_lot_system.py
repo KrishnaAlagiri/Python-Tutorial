@@ -1,4 +1,5 @@
 """
+Code by ~~Krishnakanth Alagiri~~
 Assignment
 -----------
 Design and Implement a parking lot monitoring system using OOPs concepts in Python.
@@ -19,20 +20,23 @@ I'm Assuming Parking Space IDs:
 11-17 are medium parking slots
 18-20 are large parking slots
 """
-
+import os
 # to find free parking slot availablity
 def free(id):
     if id==1:
         for i in range(0,20):
             if(parking_slot[i]==0):
+                parking_slot[i]=1
                 return(i)
     elif id==2:
         for i in range(10,20):
             if(parking_slot[i]==0):
+                parking_slot[i]=1
                 return(i)
     elif id==3:
         for i in range(17,20):
             if(parking_slot[i]==0):
+                parking_slot[i]=1
                 return(i)
     return(-1)
 
@@ -41,6 +45,7 @@ class vehicle:
     def __init__(self, vt, id):
         self.vehicle_type = vt
         self.vehicle_id = id
+        self.parking_id = (-1)
         if vt == "motorcycle":
             a=free(1)
             if a!=(-1):
@@ -53,18 +58,17 @@ class vehicle:
             a=free(3)
             if a!=(-1):
                 self.parking_id = a
-        else:
-            self.parking_id = (-1)
-            print("\rWarning: Cannot Allocate a Parking slot to this vehicle due to lack of availablity")
+
     # printing attributes
     def Print_Ticket(self):
-        print("\r  PARKING TICKET\r================")
+        print("  PARKING TICKET")
+        print("====================")
         print("Vehicle Type: ", self.vehicle_type)
         print("Vehicle ID: ", self.vehicle_id)
         if self.parking_id!=(-1):
             print("Parking slot alloted: ", self.parking_id)
         else:
-            print("Parking slot unallocated")
+            print("Parking slot unallocated to this vehicle due to lack of availablity")
 
 # driver codes
 if __name__ == '__main__':
@@ -73,9 +77,16 @@ if __name__ == '__main__':
     for i in range(0,20):
         parking_slot.append(0)
     while(1):
-        print("Enter the Vehicle ID: ")
+        os.system("cls")
+        print("  INPUT MODE")
+        print("================")
+        print("Enter the Vehicle Type: ")
         a = input()
         print("Enter the Vehicle ID: ")
         b = input()
         c = vehicle(a,b)
         c.Print_Ticket()
+        print("\rDo you want to continue (Y/N): ")
+        ch = input()
+        if (ch=='n' or ch=='N'):
+            break
