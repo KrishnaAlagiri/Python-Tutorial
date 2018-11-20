@@ -15,3 +15,5 @@ Contains all Exercise programs based on the material provided by Google's Python
 * `Week-4` [Copyspecial.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/copyspecial.py)
 ### Assignment
 * `Week-5` [parking_lot_system.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/parking_lot_system.py)
+### Regular Expressions
+* `Week-6` [Babynames.py](https://github.com/KrishnaAlagiri/Python-Tutorial/blob/master/list_comprehension_assignment.py)
