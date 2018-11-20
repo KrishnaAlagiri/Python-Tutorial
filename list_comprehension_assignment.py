@@ -20,7 +20,6 @@ def print_items ():
     for i in paths:
         print(mydir+i)
 
-
 def print_items_no_dir ():
     paths = []
     mydir = input("\rEnter Directory: ")
@@ -51,14 +50,43 @@ def remove_vowels ():
     string = re.sub(r'[AEIOU]', '', string, flags=re.IGNORECASE)
     print(string)
 
-
 def print_less_4 ():
     string = input("\rEnter string: ")
     for word in string:
         if(len(word) > 4):
             print(word)
 
-def print_length_of_each_word ():
+def print_items_no_dir ():
     sentence = input("\rEnter sentence: ")
     for word in sentence:
         print(word,"\t",len(word))
+
+def menu():
+    def printmenu():
+        print("  MENU\r========")
+        print("1. Print Items with Folders")
+        print("2. Print Items without Folders")
+        print("3. Print all .png and .jpg files")
+        print("4. Remove Vowels and Print the String")
+        print("5. Print Less 4")
+        print("6. Print Length of Each Word")
+
+    def choose(argument):
+        switcher = {
+        1: print_items(),
+        2: print_items_no_dir(),
+        3: print_pics(),
+        4: remove_vowels(),
+        5: print_less_4(),
+        6: print_items_no_dir(),
+        7: sys.exit()
+        }
+        return switcher.get(argument, print("Invalid Input"))
+
+    printmenu()
+    ch = input("\rEnter Choice: ")
+    choose(ch)
+
+# Driver program
+if __name__ == '__main__':
+  menu()
