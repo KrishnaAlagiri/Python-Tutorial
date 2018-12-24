@@ -13,3 +13,19 @@
     6
 
 """
+def logged(func):
+    def inside(*args, **kwargs):
+        print("you called ",func.__name__,*kwargs,args)
+        print("it returned",func(*args))
+    return inside
+
+@logged
+def func(*args):
+    return 3 + len(args)
+
+@logged
+def add(a,b):
+    return(a+b)
+
+func(4, 4, 4)
+add(5,3)
